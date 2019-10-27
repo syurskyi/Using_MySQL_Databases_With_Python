@@ -14,15 +14,21 @@ my_cursor = mydb.cursor()
 # my_cursor.execute("CREATE DATABASE testdb")
 
 # Show Database
-my_cursor.execute("SHOW DATABASES")
+# my_cursor.execute("SHOW DATABASES")
+#
+# my_cursor.exucute('CREATE TABLE users (name VARCHAR(255), '
+#                   'email VARCHAR(255), '
+#                   'age INTEGER(10), '
+#                   'user_id INTEGER AUTO_INCREMENT PRIMARY KEY)')
+#
+# my_cursor.execute('SHOW TABLES')
+#
+# for table in my_cursor:
+#     print(table[0])
 
-my_cursor.exucute('CREATE TABLE users (name VARCHAR(255), '
-                  'email VARCHAR(255), '
-                  'age INTEGER(10), '
-                  'user_id INTEGER AUTO_INCREMENT PRIMARY KEY)')
+sql_stuff = 'INSERT INTO users (name, email, age) VALUES (%s, %s, %s)'
+record1 = ('John', 'john@codemy', 40)
 
-my_cursor.execute('SHOW TABLES')
-
-for table in my_cursor:
-    print(table[0])
+my_cursor.execute(sql_stuff, record1)
+mydb.commit()
 
