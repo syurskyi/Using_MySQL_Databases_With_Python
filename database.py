@@ -26,9 +26,19 @@ my_cursor = mydb.cursor()
 # for table in my_cursor:
 #     print(table[0])
 
+# sql_stuff = 'INSERT INTO users (name, email, age) VALUES (%s, %s, %s)'
+# record1 = ('John', 'john@codemy', 40)
+#
+# my_cursor.execute(sql_stuff, record1)
+# mydb.commit()
+
 sql_stuff = 'INSERT INTO users (name, email, age) VALUES (%s, %s, %s)'
-record1 = ('John', 'john@codemy', 40)
+records = [
+    ('Tim', 'tim@tim.com', 32),
+    ('Mary', 'mary@mary.com', 21),
+    ('Steve', 'steve@steve.com', 57),
+    ('Tina', 'tina@tina.com', 29),
+]
 
-my_cursor.execute(sql_stuff, record1)
+my_cursor.executemany(sql_stuff, records)
 mydb.commit()
-
