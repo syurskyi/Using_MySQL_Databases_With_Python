@@ -32,13 +32,14 @@ my_cursor = mydb.cursor()
 # my_cursor.execute(sql_stuff, record1)
 # mydb.commit()
 
-sql_stuff = 'INSERT INTO users (name, email, age) VALUES (%s, %s, %s)'
-records = [
-    ('Tim', 'tim@tim.com', 32),
-    ('Mary', 'mary@mary.com', 21),
-    ('Steve', 'steve@steve.com', 57),
-    ('Tina', 'tina@tina.com', 29),
-]
+# sql_stuff = 'INSERT INTO users (name, email, age) VALUES (%s, %s, %s)'
+# records = [
+#     ('Tim', 'tim@tim.com', 32),
+#     ('Mary', 'mary@mary.com', 21),
+#     ('Steve', 'steve@steve.com', 57),
+#     ('Tina', 'tina@tina.com', 29),
+# ]
+#
+# my_cursor.executemany(sql_stuff, records)
+# mydb.commit()
 
-my_cursor.executemany(sql_stuff, records)
-mydb.commit()
