@@ -1,5 +1,6 @@
 import mysql.connector
 
+# SET MYSQL CONNECTION
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -10,7 +11,7 @@ mydb = mysql.connector.connect(
 # Create Cursor Instance
 my_cursor = mydb.cursor()
 
-# Show Database
+#SHOW DATABASE
 my_cursor.execute("SHOW DATABASES")
 
 for db in my_cursor:

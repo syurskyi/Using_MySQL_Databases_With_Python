@@ -1,5 +1,6 @@
 import mysql.connector
 
+# SET MYSQL CONNECTION
 mydb = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -10,6 +11,7 @@ mydb = mysql.connector.connect(
 # Create Cursor Instance
 my_cursor = mydb.cursor()
 
+# DELETE DROP TABLE
 my_sql = "DROP TABLE users"
 my_cursor.execute(my_sql)
 
